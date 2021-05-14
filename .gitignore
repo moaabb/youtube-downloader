@@ -2,3 +2,8 @@
 /Scripts
 /Include
 /downloads
+/dist
+/build
+/__pycache__
+downloader.spec
+Youtube Downloader 1.1.rar
