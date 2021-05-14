@@ -1,0 +1,6 @@
+py-notifier==0.3.0
+pypiwin32==223
+pytube==10.8.1
+pywin32==300
+typing-extensions==3.10.0.0
+win10toast==0.9
