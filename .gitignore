@@ -1,4 +1,6 @@
 /lib
+/lib64
+/bin
 /Scripts
 /Include
 /downloads
