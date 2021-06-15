@@ -42,12 +42,13 @@ def video_downloader(url, extension):
     try:
         video = YouTube(url)
         
-        notify('Download está começando', f'O download de {video.title} está em andamento', 2)
+    #    notify('Download está começando', f'O download de {video.title} está em andamento', 2)
         print('Seu download começou')
         
         downloader(url, output_folder, extension)
     
-        notify('Download foi finalizado', f'O download de {video.title} foi concluído')
+       # notify('Download foi finalizado', f'O download de {video.title} foi concluído')
+       
         print('Seu download foi concluído')
     except:
         print('Erro no download')
@@ -61,7 +62,7 @@ def playlist_downloader(url, extension):
     if not os.path.exists(output_folder):
         os.mkdir(output_folder)
 
-    notify('Download está começando', f'O download de {yt.title} está em andamento', 2)
+  #  notify('Download está começando', f'O download de {yt.title} está em andamento', 2)
 
     for index, video in enumerate(videos):
 
@@ -72,7 +73,7 @@ def playlist_downloader(url, extension):
             print('Erro no download, iniciando o próximo!')
             continue
 
-    notify('Download foi finalizado', f'O download de {yt.title} foi concluído')
+   #  notify('Download foi finalizado', f'O download de {yt.title} foi concluído')
 
 
 if download_type == 'P':
