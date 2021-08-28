@@ -10,9 +10,9 @@ name: CI
 
 jobs:
   build:
-    
+
     runs-on: windows-latest
-    
+
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
@@ -20,11 +20,13 @@ jobs:
       - name: Set up Python 3.
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'    
-      
+          python-version: '3.x'
+
       - name: Install dependencies & pyinstaller
         run: pip3 install -r requirements.txt && pip3 install pyinstaller
-        
+
       - name: build the .exe
-        run: pyinstaller downloader.exe
-        
+        run: pyinstaller  --onefile -i icon.ico downloader.py
+        env:
+          PY_COLORS: '1'
+

@@ -19,7 +19,7 @@ while True:
 
 
 if not os.path.exists('downloads'):
-        os.mkdir('downloads')
+    os.mkdir('downloads')
 
 def downloader(url, output_folder, extension):
     video = YouTube(url)
