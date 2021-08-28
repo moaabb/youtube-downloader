@@ -30,3 +30,8 @@ jobs:
         env:
           PY_COLORS: '1'
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: meu-artefato
+          path: dist/
+
