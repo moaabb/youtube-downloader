@@ -8,15 +8,15 @@ while True:
     download_type = input('\nVocê quer baixar um Vídeo (V) ou uma Playilist (P)? ')
     if download_type == 'P' or download_type == 'V':
         break
-    else: 
+    else:
         print('\nVocê inseriu informações erradas, tente novamente')
 while True:
     extension = input('\nVocê quer audio (A) ou vídeo (V)? ')
     if extension == 'V' or extension == 'A':
         break
-    else: 
+    else:
         print('\nVocê inseriu informações erradas, tente novamente')
-    
+
 
 if not os.path.exists('downloads'):
         os.mkdir('downloads')
@@ -28,21 +28,19 @@ def downloader(url, output_folder, extension):
 
     elif extension == 'A':
         video.streams.get_audio_only().download(output_folder, filename=re.sub('[!,*)@#%(&$_?.^|/\\\]', '', video.title))
-                
+
 
 def video_downloader(url, extension):
     output_folder = 'downloads'
     try:
-        video = YouTube(url)
-        
+
         print('Seu download começou')
-        
+
         downloader(url, output_folder, extension)
-       
+
         print('Seu download foi concluído')
     except:
         print('Erro no download')
-        notify('Erro no download', 'Tente novamente')
 
 def playlist_downloader(url, extension):
     yt = Playlist(url)
@@ -55,7 +53,7 @@ def playlist_downloader(url, extension):
 
     for index, video in enumerate(videos):
 
-        try:  
+        try:
             downloader(video, output_folder, extension)
             print(f'Download Concluído! {index + 1} de {len(videos)}, iniciando o próximo!')
         except:
