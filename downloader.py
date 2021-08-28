@@ -24,10 +24,10 @@ if not os.path.exists('downloads'):
 def downloader(url, output_folder, extension):
     video = YouTube(url)
     if extension == 'V':
-        video.streams.get_highest_resolution().download(output_folder, filename=re.sub('[!,*)@#%(&$_?.^|/\\\]', '', video.title))
+        video.streams.get_highest_resolution().download(output_folder, filename=re.sub('[!,*)@#%(&$_?^|/\\\]', '', f'{video.title}.mp4'))
 
     elif extension == 'A':
-        video.streams.get_audio_only().download(output_folder, filename=re.sub('[!,*)@#%(&$_?.^|/\\\]', '', video.title))
+        video.streams.get_audio_only().download(output_folder, filename=re.sub('[!,*)@#%(&$_?^|/\\\]', '', f'{video.title}.mp3'))
 
 
 def video_downloader(url, extension):
